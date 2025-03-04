@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Water Potability Predection</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css' ) }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Water Potability Predection</h1>
+        <form method="post">
+            <div class="cont">
+                <label>Ph value</label>
+                <input type="text" name="ph" id="ph">
+
+
+                <label>Hardness</label>
+                <input type="text" class="form-control" id="Hardness" name="Hardness">
+
+
+                <label>Solids</label>
+                <input type="text" class="form-control" id="Solids" name="Solids">
+
+            </div>
+            <div class="cont">
+                <label>Chloramines</label>
+                <input type="text" class="form-control" id="Chloramines" name="Chloramines">
+
+
+                <label>Sulfate</label>
+                <input type="text" id="Sulfate" name="Sulfate">
+
+
+                <label>Conductivity</label>
+                <input type="text" id="Conductivity" name="Conductivity">
+
+            </div>
+            <div class="cont">
+                <label>Organic carbon</label>
+                <input type="text" id="Organic_carbon" name="Organic_carbon">
+
+
+                <label>Trihalomethanes</label>
+                <input type="text" id="Trihalomethanes" name="Trihalomethanes">
+
+
+                <label>Turbidity</label>
+                <input type="text" id="Turbidity" name="Turbidity">
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <button type="submit" formaction="/predict" value="Predict">Predict</button>
+                    <button type="submit" formaction="/reset" value="reset">Reset</button>
+                </div>
+                <div class="box2">
+                    {% if message %}
+            
+                        <h2 style="color: red;"> {{message}}</h2>
+                    {% else %}
+                        <h2>Prediction : {{result}}</h2>
+            
+                    {% endif %}
+
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+</body>
+
+</html>
