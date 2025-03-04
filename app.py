@@ -6,6 +6,11 @@ app = Flask(__name__)
 
 model = joblib.load(open("model.pkl","rb"))  
 
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
 @app.route('/reset', methods=['GET', 'POST'])
 def reset():
     return render_template("index.html")
@@ -41,4 +46,4 @@ def predict_water_quality():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
