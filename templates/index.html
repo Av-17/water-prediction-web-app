@@ -12,44 +12,52 @@
     <div class="container">
         <h1>Water Potability Predection</h1>
         <form method="post">
-            <div class="cont">
-                <label>Ph value</label>
-                <input type="text" name="ph" id="ph">
+                <div class="cont">
+                    <div class="input-group">
+                        <label for="name">ph Value</label>
+                        <input type="text" name="ph" id="ph" />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Hardness</label>
+                        <input class="form-control" id="Hardness" name="Hardness" />
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Solids</label>
+                        <input type="text" class="form-control" id="Solids" name="Solids" />
+                    </div>
+                </div>
+                <div class="cont">
 
+                    <div class="input-group">
+                        <label for="name">Chloramines</label>
+                        <input type="text" name="Chloramines" id="Chloramines" />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Sulfate</label>
+                        <input class="form-control" id="Sulfate" name="Sulfate" />
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Conductivity:</label>
+                        <input type="text" class="form-control" id="Conductivity" name="Conductivity" />
+                    </div>
+                </div>
+ 
+                <div class="cont">
 
-                <label>Hardness</label>
-                <input type="text" class="form-control" id="Hardness" name="Hardness">
+                    <div class="input-group">
+                        <label for="name">Organic carbon</label>
+                        <input type="text" name="Organic_carbon" id="Organic_carbon" />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Trihalomethanes</label>
+                        <input class="form-control" id="Trihalomethanes" name="Trihalomethanes" />
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Turbidity</label>
+                        <input type="text" class="form-control" id="Turbidity" name="Turbidity" />
+                    </div>
+                </div>
 
-
-                <label>Solids</label>
-                <input type="text" class="form-control" id="Solids" name="Solids">
-
-            </div>
-            <div class="cont">
-                <label>Chloramines</label>
-                <input type="text" class="form-control" id="Chloramines" name="Chloramines">
-
-
-                <label>Sulfate</label>
-                <input type="text" id="Sulfate" name="Sulfate">
-
-
-                <label>Conductivity</label>
-                <input type="text" id="Conductivity" name="Conductivity">
-
-            </div>
-            <div class="cont">
-                <label>Organic carbon</label>
-                <input type="text" id="Organic_carbon" name="Organic_carbon">
-
-
-                <label>Trihalomethanes</label>
-                <input type="text" id="Trihalomethanes" name="Trihalomethanes">
-
-
-                <label>Turbidity</label>
-                <input type="text" id="Turbidity" name="Turbidity">
-            </div>
             <div class="box">
                 <div class="box1">
                     <button type="submit" formaction="/predict" value="Predict">Predict</button>
@@ -57,11 +65,11 @@
                 </div>
                 <div class="box2">
                     {% if message %}
-            
-                        <h2 style="color: red;"> {{message}}</h2>
+
+                    <h2 style="color: red;"> {{message}}</h2>
                     {% else %}
-                        <h2>Prediction : {{result}}</h2>
-            
+                    <h2>Prediction : {{result}}</h2>
+
                     {% endif %}
 
                 </div>
